@@ -53,11 +53,11 @@ gsettings set org.gnome.desktop.interface enable-animations false
 # Fontes
 cd Downloads/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip
-unzip Hack.zip -o -d MyFonts
+unzip Hack.zip -n -d MyFonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Ubuntu.zip
-unzip Ubuntu.zip -o -d MyFonts
+unzip Ubuntu.zip -n -d MyFonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/UbuntuMono.zip
-unzip UbuntuMono.zip -o -d MyFonts
+unzip UbuntuMono.zip -n -d MyFonts
 sudo cp -r MyFonts /usr/share/fonts/truetype/
 sudo fc-cache -f -v
 gsettings set org.gnome.desktop.interface font-name 'Ubuntu Nerd Font Regular 11'
@@ -71,9 +71,27 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo 
 
-# Add the custom shortcut for kitty
+
+#add keybindigs 
+slots=('/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2')
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "${slots[@]}"
+
+
+# for kitty
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "kitty"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "kitty"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Primary><Alt>K'
 
+# for gnome-terminal
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "terminal"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "gnome-terminal"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Primary><Alt>T'
+
+# for firefox
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name "firefox"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command "firefox"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Alt>F'
+
+#zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+Y
