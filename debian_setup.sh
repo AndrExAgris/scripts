@@ -35,7 +35,7 @@ sudo snap install discord onlyoffice-desktopeditors
 
 #dark mode
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-gsettings set org.gnome.desktop.interface color-scheme'prefer-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 #tela
 gsettings set org.gnome.desktop.screensaver lock-enabled false
@@ -63,12 +63,15 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'UbuntuMono Nerd F
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Ubuntu Nerd Font Bold 11'
 
 
-
+#install kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/n
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Ubuntu.zip
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/UbuntuMono.zip
+# Add the custom shortcut for kitty
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Launch Kitty"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "kitty"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Primary><Alt>K"
+
 
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
