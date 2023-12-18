@@ -6,7 +6,10 @@
 sudo apt update && sudo apt upgrade -y
 
 #pra codar
-sudo apt install build-essential gcc vim git cmake zsh -y
+sudo apt install build-essential gcc vim git cmake -y
+
+#terminal
+sudo apt install kitty zsh -y
 
 #util
 sudo apt install wget curl nmap net-tools ncdu btop openjdk-17-jdk vlc pkg-config -y
@@ -21,7 +24,7 @@ sudo apt install gnome-shell-extension-manager -y
 sudo apt install neofetch sl lolcat tldr cowsay -y
 
 #snaps
-sudo apt install snapd
+sudo apt install snapd -y
 sudo systemctl enable --now snapd.socket
 
 #snaps --classic
@@ -50,11 +53,11 @@ gsettings set org.gnome.desktop.interface enable-animations false
 # Fontes
 cd Downloads/
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip
-unzip Hack.zip -d MyFonts
+unzip Hack.zip -o -d MyFonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Ubuntu.zip
-unzip Ubuntu.zip -d MyFonts
+unzip Ubuntu.zip -o -d MyFonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/UbuntuMono.zip
-unzip UbuntuMono.zip -d MyFonts
+unzip UbuntuMono.zip -o -d MyFonts
 sudo cp -r MyFonts /usr/share/fonts/truetype/
 sudo fc-cache -f -v
 gsettings set org.gnome.desktop.interface font-name 'Ubuntu Nerd Font Regular 11'
@@ -69,9 +72,8 @@ sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo 
 
 # Add the custom shortcut for kitty
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Launch Kitty"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "kitty"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "kitty"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Primary><Alt>K"
-
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Primary><Alt>K'
 
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
