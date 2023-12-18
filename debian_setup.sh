@@ -73,9 +73,10 @@ sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo
 
 
 #add keybindigs 
-slots=('/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2')
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "${slots[@]}"
-
+zero='/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/' 
+one='/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/' 
+two='/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2'
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['$zero', '$one', '$two']"
 
 # for kitty
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "kitty"
@@ -94,4 +95,3 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 
 #zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-Y
