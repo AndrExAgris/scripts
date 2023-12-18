@@ -31,7 +31,7 @@ sudo apt autoremove -y  && sudo apt autoclean
 
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/
-sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/n
+sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Hack.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/Ubuntu.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/UbuntuMono.zip

@@ -66,7 +66,7 @@ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Ubuntu Nerd Font B
 #install kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/
-sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/n
+sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/sudo 
 
 # Add the custom shortcut for kitty
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Launch Kitty"
