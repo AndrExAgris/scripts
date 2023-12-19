@@ -9,7 +9,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install build-essential gcc vim git cmake -y
 
 #terminal
-sudo apt install kitty zsh -y
+sudo apt install zsh -y
 
 #util
 sudo apt install wget curl nmap net-tools ncdu btop openjdk-17-jdk vlc pkg-config -y
@@ -23,6 +23,9 @@ sudo apt install gnome-shell-extension-manager -y
 #meme
 sudo apt install neofetch sl lolcat tldr cowsay -y
 
+#clean
+sudo apt autoremove -y && sudo apt autoclean
+
 #snaps
 sudo apt install snapd -y
 sudo systemctl enable --now snapd.socket
@@ -31,7 +34,7 @@ sudo systemctl enable --now snapd.socket
 sudo snap install codium --classic  
 
 #snaps
-sudo snap install discord onlyoffice-desktopeditors
+sudo snap install onlyoffice-desktopeditors
 
 #--------------------------------------------------------------------
 ### Configuracoes do sistema:
@@ -43,6 +46,8 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 #tela
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 0
 
 #som do sistema desabilitado
 gsettings set org.gnome.desktop.sound event-sounds false

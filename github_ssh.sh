@@ -16,6 +16,8 @@ ssh-keygen -t ed25519 -C "$email"
 ssh-add ~/.ssh/id_ed25519
 
 #printa a chave publica
-echo "copie a chave publica e cole no github"
+clear
+
+echo "copie a chave publica e cole no github:"
 
 cat ~/.ssh/id_ed25519.pub
